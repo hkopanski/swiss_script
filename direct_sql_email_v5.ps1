@@ -1,7 +1,7 @@
-﻿$ServerInstance = '192.168.175.15'
-$Database = 'Runtime'
-$variable1 = 'Archive_Infobatch'
-$variable2 = '!Qpzmty01!'
+﻿$ServerInstance = 'xxxx'
+$Database = 'xxxx'
+$variable1 = 'xxxx'
+$variable2 = 'xxxx'
 $Query =  "SET NOCOUNT ON
 
 DECLARE @StartTime as varchar(60)
@@ -26,53 +26,7 @@ DECLARE @Chamber_List table
 
 insert into @Chamber_List values 
 
-('TI_FZ80468_001'),
-('TI_FZ80470_001'),
-('TI_SC046_001'),
-('TT_80578_001'),
-('TIT_97050_001'),
-('TIT_97061_001'),
-('TIT_97561_001'),
-('TI_FZ80469_001'),
-('TI_SC045_001'),
-('TI_SC008_001'),
-('TI_SC028_001'),
-('TI_SC029_001'),
-('TI_SC030_001'),
-('TI_SC038_001'),
-('TI_SC051_001'),
-('TI_SC056_001'),
-('TI_SC057_001'),
-('THC_80580_001'),
-('TIT_97056_001'),
-('TIT_97058_001'),
-('TIT_97059_001'),
-('TIT_97060_001'),
-('TIT_97129_001'),
-('TIT_97130_001'),
-('TIT_80577_001'),
-('TI_80317_001'),
-('TI_80332_001'),
-('TI_98292_001'),
-('TI_98295_001'),
-('TI_FZ80579_001'),
-('TI_80583_001'),
-('TI_81488_001'),
-('TI_81484_001'),
-('TI_81485_001'),
-('TI_81486_001'),
-('TI_81487_001'),
-('MI_SC028_001'),
-('MI_SC029_001'),
-('MI_SC030_001'),
-('MI_SC038_001'),
-('MI_SC051_001'),
-('MI_SC056_001'),
-('MI_SC057_001'),
-('MIT_97059_001'),
-('MIT_97060_001'),
-('MIT_97129_001'),
-('MIT_97130_001')
+('Chamber_1'), ('Chamber_2')
 
 
 INSERT @AlarmRaise 
@@ -282,14 +236,14 @@ $Attachments = $data_table_sql | format-table
 $Attachment = 'C:\Scripts\chambers_query\B35_Daily_QC_Report.html'
     
     $sendMailReport = @{
-        From = 'RTPDPAlarms@biogen.com'
-        To = 'DL-RTPPharmaAutomationEngineering@biogen.com','brittany.powell@biogen.com', 'wing.yeung@biogen.com', 'carmen.serrano@biogen.com', 'kenza.yechoukh@biogen.com', 'kristen.dodson@biogen.com'
-        Subject = 'Daily Building 35 Chamber Report'
-        Body = "24 Hour Building 35 Chamber Query"
+        From = 'xxxx'
+        To = 'person@email.com'
+        Subject = 'xxxxx'
+        Body = "xxxxxx"
         Attachments = $Attachment
         Priority = 'High'
         DeliveryNotificationOption = 'OnSuccess', 'OnFailure'
-        SmtpServer = '192.168.175.11'
+        SmtpServer = 'xxxxx'
     }
     
 Send-MailMessage @sendMailReport
@@ -308,13 +262,13 @@ $Attachments = $data_table_sql | format-table
 $Attachment = 'C:\Scripts\chambers_query\B35_Daily_QC_Report.html'
     
     $sendMailReport = @{
-        From = 'RTPDPAlarms@biogen.com'
-        To = 'DL-RTPPharmaAutomationEngineering@biogen.com','brittany.powell@biogen.com', 'wing.yeung@biogen.com', 'carmen.serrano@biogen.com', 'kenza.yechoukh@biogen.com', 'kristen.dodson@biogen.com'
-        Subject = 'Daily Building 35 Chamber Report'
+        From = 'xxxxx'
+        To = 'xxxxxx'
+        Subject = 'Daily Chamber Report'
         Body = "No Alarms found in the last 24 hours"
         Priority = 'High'
         DeliveryNotificationOption = 'OnSuccess', 'OnFailure'
-        SmtpServer = '192.168.175.11'
+        SmtpServer = 'xxxxx'
     }
     
 Send-MailMessage @sendMailReport
